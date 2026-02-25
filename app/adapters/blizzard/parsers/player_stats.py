@@ -27,6 +27,7 @@ GENERIC_STATS_NAMES = [
     "games_played",
     "games_won",
     "games_lost",
+    "games_tied",
     "time_played",
 ]
 TOTAL_STATS_NAMES = [
@@ -42,6 +43,7 @@ STATS_PLACEHOLDER = {
     "games_played": 0,
     "games_won": 0,
     "games_lost": 0,
+    "games_tied": 0,
     "time_played": 0,
     "winrate": 0,
     "kda": 0,
@@ -125,6 +127,7 @@ def _compute_hero_stats(hero_stats: list[dict]) -> dict:
     games_played = _get_stat_value("games_played", game_stats)
     time_played = _get_stat_value("time_played", game_stats)
     games_lost = _get_stat_value("games_lost", game_stats)
+    games_tied = _get_stat_value("games_tied", game_stats)
 
     # Sometimes, games lost are negative on Blizzard page. To not
     # disturb too much the winrate, we put a value for 50% winrate
@@ -150,6 +153,7 @@ def _compute_hero_stats(hero_stats: list[dict]) -> dict:
         "games_played": games_played,
         "games_won": games_won,
         "games_lost": games_lost,
+        "games_tied": games_tied,
         "time_played": time_played,
         "total": {
             "eliminations": eliminations,

@@ -331,6 +331,7 @@ def get_plural_stat_key(stat_key: str) -> str:
         "game_lost": "games_lost",
         "game_played": "games_played",
         "game_won": "games_won",
+        "game_tied": "games_tied",
         "hero_win": "hero_wins",
         "card": "cards",
     }
