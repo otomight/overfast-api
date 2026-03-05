@@ -7,7 +7,7 @@ limit_req_zone $http_x_forwarded_for zone=ofreq:10m rate=${RATE_LIMIT_PER_SECOND
 limit_req_status 429;
 
 upstream appbackend {
-  server app:8080;
+  server overfast-api:8080;
 }
 
 # Use Docker's internal DNS resolver for Lua script
